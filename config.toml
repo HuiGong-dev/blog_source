@@ -1,4 +1,13 @@
 theme = "hyde"
 baseURL = 'https://huigong-dev.github.io/'
 languageCode = 'en-us'
-title = 'Dev Space'
+title = 'Hui Gong'
+
+[Menus]
+  main = [
+      {Name = "Github", URL = "https://github.com/HuiGong-dev/"},
+      {Name = "LinkedIn", URL = "https://www.linkedin.com/in/helen-gong-874b7a7a/"}
+  ]
+
+  [params]
+    description = "Coding and more"
