@@ -1,4 +1,4 @@
+theme = "hyde"
 baseURL = 'https://huigong-dev.github.io'
 languageCode = 'en-us'
 title = 'Dev Space'
-theme = "hyde"
