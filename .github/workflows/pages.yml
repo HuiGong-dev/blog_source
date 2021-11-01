@@ -29,3 +29,5 @@ jobs:
         external_repository: HuiGong-dev/HuiGong-dev.github.io
         publish_branch: main
         publish_dir: ./public
+        user_name: HuiGong-dev
+        user_email: hellohuigong@gmail.com
