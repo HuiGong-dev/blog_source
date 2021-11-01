@@ -19,7 +19,7 @@ Hi, my name is Hui. I'm studying computer science in Germany.
 
 #### Reflections on my personal projects on Github.
   - What problem I solved
-  - what was the challenge
+  - What was the challenge
   - How I tackled it
   - What I've learned in the project
 
