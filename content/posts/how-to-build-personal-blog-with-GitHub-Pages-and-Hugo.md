@@ -10,7 +10,7 @@ You want to build a personal blog but don't want to spend too much time building
 Hugo is a static site generator written in [Go](https://golang.org/).
 
 ## Why Hugo
-It's blazing fast! Hugo's official website states it is "the world’s fastest framework for building websites" and after using it I've nothing to complain for the building speed.
+It's blazing fast! Hugo's official website states it is "the world’s fastest framework for building websites" and after using it I've nothing to complain about the speed.
 
 ## Step by step
 
