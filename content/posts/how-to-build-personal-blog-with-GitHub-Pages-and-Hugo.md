@@ -46,11 +46,14 @@ the hugo version should show up if the installation is successful.
 hugo new site your-site-name
 ```
 
-replace `your-site-name` with the name of your site. You can name it anything you want. The command above will create a folder named `your-site-name` in your current working directory. For example, if the current working directory is `/users/huigong/projects`, your site will be located in `/users/huigong/projects/your-site-name`. If you are not sure about your working directory, just type in your terminal:
+replace `your-site-name` with the name of your site. You can name it anything you want. The command above will create a folder named `your-site-name` in your current working directory. For example, if the current working directory is `/Users/huigong/projects`, your site will be located in `/Users/huigong/your-site-name`. If you are not sure about your working directory, just type `pwd` in your terminal:
 
 ```Shell
-pwd
+$ pwd
+/Users/huigong/projects
 ```
+
+and the output shows your working directory.
 
 ### Choose a theme
 
