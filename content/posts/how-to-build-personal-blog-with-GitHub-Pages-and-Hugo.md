@@ -1,7 +1,9 @@
 ---
-title: "How to Build Personal Blog With GitHub Pages and Hugo"
+title: "How to build personal blog using GitHub Pages and Hugo"
 date: 2021-11-02T11:00:32+01:00
 draft: false
+tags: [GitHub Pages, Hugo, GitHub Action]
+categories: [Personal Project]
 ---
 
 You want to build a personal blog but don't want to spend too much time building everything from scratch? Me too! After some research I get to know there're several static site generator out there and the most used generators are: [Jekyll](https://jekyllrb.com/), [Hexo](https://hexo.io/) and [Hugo](https://gohugo.io/). All of them can work perfectly with [GitHub Pages](https://pages.github.com/). I chose Hugo as my site generator and it worked perfectly.
