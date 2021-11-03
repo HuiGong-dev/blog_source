@@ -16,13 +16,41 @@ Hugo is a static site generator written in [Go](https://golang.org/).
 
 It's blazing fast! Hugo's official website states it is "the world’s fastest framework for building websites" and after using it I've nothing to complain about the speed.
 
+Besides, build a blog with Hugo is simple and easy. Here is how:
+
 ## Step by step
 
 ### Set up GitHub Pages
 
+Head over to [GitHub](https://github.com/), login and create a new public repository named `username.github.io`. Be sure the `username` is exactly the same as your GitHub username. For example: my username is `HuiGong-dev` so my repository should be named as `HuiGong-dev.github.io`. Check the official guide [here]((https://pages.github.com/)) if you met any problem.
+
 ### Install Hugo
 
+I'm using MacOS and the installation is quite simple with [Homebrew](https://brew.sh/):
+
+```Shell
+brew install hugo
+```
+
+To check your installation:
+
+```Shell
+hugo version
+```
+
+the hugo version should show up if the installation is successful.
+
 ### Create your site
+
+```Shell
+hugo new site your-site-name
+```
+
+replace `your-site-name` with the name of your site. You can name it anything you want. The command above will create a folder named `your-site-name` in your current working directory. For example, if the current working directory is `/users/huigong/projects`, your site will be located in `/users/huigong/projects/your-site-name`. If you are not sure about your working directory, just type in your terminal:
+
+```Shell
+pwd
+```
 
 ### Choose a theme
 
