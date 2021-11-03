@@ -26,7 +26,7 @@ Hallo, mein Name ist Hui. Ich studiere Informatik in Deutschland.
 
 #### Studentenleben  
   - Gedanken zu den Vorlesungen, die ich besuche
-  - Die Klausurphase! (Auf Deutsch: Klausurphase )
+  - Die Klausurphase!
   - Wie man sich als Frau in einer männerdominierten Branche fühlt
 
 #### Alles über Coding
