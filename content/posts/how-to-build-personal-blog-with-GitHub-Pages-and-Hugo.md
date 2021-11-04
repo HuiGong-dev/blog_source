@@ -16,7 +16,7 @@ Hugo is a static site generator written in [Go](https://golang.org/).
 
 It's blazing fast! Hugo's official website states it is "the world’s fastest framework for building websites" and after using it I've nothing to complain about the speed.
 
-Besides, build a blog with Hugo is simple and easy. Here is how:
+Besides, building a blog with Hugo is simple and easy. Here is how:
 
 ## Step by step
 
@@ -57,7 +57,25 @@ and the output shows your working directory.
 
 ### Choose a theme
 
+```Shell
+cd your-site-name
+git init
+git submodule add https://github.com/spf13/hyde.git
+```
+
+There're around 300 themes for Hugo. I chose [hyde](https://github.com/spf13/hyde) for my blog. You can find a theme that fits you best [here](https://themes.gohugo.io/). If none of them is the perfect theme for you, you may consider create your own theme in the future and contribute to the Hugo community :)
+
+Don't forget to configure the theme in `config.toml`. Simply add a line `theme = \"hyde\"` in the file. Replace `hyde` to the name of your own theme if you picked another theme.
+
 ### Build your site and push to GitHub
+
+Creating content in Hugo is simple:
+
+```Shell
+hugo new posts/hello-world.md
+```
+
+this will create a new Markdown file named `Hello world` in the content/posts directory. Open the file with your favorite editor (shout out for VS Code) and change the `draft: true` to `draft: false`
 
 ### Create a blog source repository in GitHub
 
