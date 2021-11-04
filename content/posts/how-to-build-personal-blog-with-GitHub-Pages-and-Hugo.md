@@ -75,7 +75,7 @@ Creating content in Hugo is simple:
 hugo new posts/hello-world.md
 ```
 
-this will create a new Markdown file named `Hello world` in the content/posts directory. Open the file with your favorite editor (shout out for VS Code) and change the `draft: true` to `draft: false`
+this will create a new Markdown file named `Hello world` in the content/posts directory. Open the file with your favorite editor (shout out to [VS Code](https://code.visualstudio.com/)) and change the `draft: true` to `draft: false`
 
 ### Create a blog source repository in GitHub
 
