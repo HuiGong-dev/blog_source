@@ -124,7 +124,7 @@ Next, Head over to your `blog_source` repository on GitHub and click `Settings -
 
 Add the file `.github/workflows/pages.yml` below to your source code repository. The `external_repository` points to your blog repository.
 
-```Yml
+```YAML
 name: hugo publish
 
 on:
