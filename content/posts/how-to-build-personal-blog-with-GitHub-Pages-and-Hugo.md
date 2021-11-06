@@ -120,7 +120,7 @@ This is one of the exciting part building a blog with GitHub Pages. Before build
 
 Fist step is to create a GitHub personal access token. Follow the official documents [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more information.
 
-Next, Head over to your `blog_source` repository on GitHub and click `Settings -> Secrets -> new repository secret`. Paste the token you just got, set the name to `ACTIONS_DEPLOY_KEY` and hit the `Add secret` button.
+Next, Head over to your `blog_source` repository on GitHub and click _Settings -> Secrets -> new repository secret_. Paste the token you just got, set the name to `ACTIONS_DEPLOY_KEY` and hit the _Add secret_ button.
 
 Add the file `.github/workflows/pages.yml` below to your source code repository. The `external_repository` points to your blog repository.
 
