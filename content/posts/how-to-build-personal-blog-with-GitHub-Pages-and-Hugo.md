@@ -75,7 +75,31 @@ Creating content in Hugo is simple:
 hugo new posts/hello-world.md
 ```
 
-this will create a new Markdown file named `Hello world` in the content/posts directory. Open the file with your favorite editor (shout out to [VS Code](https://code.visualstudio.com/)) and change the `draft: true` to `draft: false`
+this will create a new Markdown file named `Hello world` in the content/posts directory. Open the file with your favorite editor (shout out to [VS Code](https://code.visualstudio.com/)) and change the `draft: true` to `draft: false`.
+
+Now, start the Hugo server to preview your site:
+
+```Shell
+hugo server -D
+```
+
+You can then check your new site at http://localhost:1313/.
+
+Next step is to configure the `config.toml` file. Open it with your favorite editor and set `baseURL` to `https://username.github.io/`. Remember to replace `username` to your own username on GitHub. The code below shows how it looks like by my side.
+
+```Toml
+theme = "hyde"
+baseURL = 'https://huigong-dev.github.io/'
+languageCode = 'en-us'
+```
+
+Great! You're all set! Finally it's time to build your site:
+
+```Shell
+hugo -D
+```
+
+code of your site will be generated under `./public/`. Change directory to `public/`, do `git init` and set remote to your GitHub pages repository. Push to your GitHub pages repository and your site should be live within seconds.
 
 ### Create a blog source repository in GitHub
 
