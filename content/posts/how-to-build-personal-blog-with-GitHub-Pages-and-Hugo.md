@@ -103,6 +103,64 @@ code of your site will be generated under `./public/`. Change directory to `publ
 
 ### Create a blog source repository in GitHub
 
-### Push source code to GitHub
+Okay, now your site is live, what's next? A problem used to bother me a lot was: how can I update my blog on multiple computers? Say, I have wrote something for my blog on my PC at home and now I'm on the way with a laptop. How can I continue my work? Well the answer is: create a GitHub repository just for your source code. I said "just" because the `public/` directory is within the source code directory and we need to ignore `public/` and push the rest of them to github. Another benefit is that you can use GitHub Actions to glue your source code and blog together, which means you don't need to build and deploy your site every time you changed anything in your site, GitHub Actions will do all the boring stuff for you. Sounds nice? Here is how:
 
-### Automate the deploy using GitHub Action
+Head over to GitHub and create a new repository with name like `blog_source` or anything that reminds you it's the source of your blog. Set it as remote repository for your source code and add `public/` to `.gitignore`.
+
+```Shell
+touch .gitignore
+echo "public/" >> .gitignore
+```
+
+push it to GitHub and next time you want to edit your blog on another machine you just need to pull it from GitHub and continue the work.
+
+### Automate the deploy using GitHub Actions
+
+This is one of the exciting part building a blog with GitHub Pages. Before building this blog I knew almost nothing about GitHub Actions but after using it, it was amazing! Automating the boring stuff always makes me hyped!
+
+Fist step is to create a GitHub personal access token. Follow the official documents [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more information.
+
+Next, Head over to your `blog_source` repository on GitHub and click `Settings -> Secrets -> new repository secret`. Paste the token you just got, set the name to `ACTIONS_DEPLOY_KEY` and hit the `Add secret` button.
+
+Add the file `.github/workflows/pages.yml` below to your source code repository. The `external_repository` points to your blog repository.
+
+```Yml
+name: hugo publish
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build-deploy:
+    runs-on: macos-latest
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v2
+    
+    - name: Update theme
+      run: git submodule update --init --recursive
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.88.1'
+
+    - name: Build
+      run: hugo  --minify
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        external_repository: your-github-name/your-github-name.github.io
+        publish_branch: main
+        publish_dir: ./public
+        user_name: your-name
+        user_email: your-email
+```
+
+And we are done! GitHub Actions will do all the boring "build and deploy" routine and you can concentrate on content creating and more.
+
+Happy blogging!
