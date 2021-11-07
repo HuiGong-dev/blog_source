@@ -6,7 +6,7 @@ tags: [GitHub Pages, Hugo, GitHub Action]
 categories: [Personal Project]
 ---
 
-You want to build a personal blog but don't want to spend too much time building everything from scratch? Me too! After some research I got to know there are several static site generators out there and the most used generators are: [Jekyll](https://jekyllrb.com/), [Hexo](https://hexo.io/) and [Hugo](https://gohugo.io/). All of them work perfectly with [GitHub Pages](https://pages.github.com/). I chose Hugo as my site generator and it worked perfectly.
+You want to build a personal blog but don't want to spend too much time building everything from scratch? Me too! After some research I got to know there are several static site generators out there and the most used generators are: [Jekyll](https://jekyllrb.com/), [Hexo](https://hexo.io/) and [Hugo](https://gohugo.io/). All of them work perfectly with [GitHub Pages](https://pages.github.com/). I chose Hugo as my site generator, and it worked perfectly.
 
 ## What is Hugo
 
@@ -26,7 +26,7 @@ Head over to [GitHub](https://github.com/), login and create a new public reposi
 
 ### Install Hugo
 
-I'm using MacOS and the installation is quite simple with [Homebrew](https://brew.sh/):
+I'm using macOS and the installation is quite simple with [Homebrew](https://brew.sh/):
 
 ```Shell
 brew install hugo
@@ -46,14 +46,14 @@ The Hugo version should show up if the installation is successful.
 hugo new site your-site-name
 ```
 
-replace `your-site-name` with the name of your site. You can name it anything you want. The command above will create a folder named `your-site-name` in your current working directory. For example, if the current working directory is `/Users/huigong/projects`, your site will be located in `/Users/huigong/your-site-name`. If you are not sure about your working directory, just type `pwd` in your terminal:
+Replace `your-site-name` with the name of your site. You can name it anything you want. The command above will create a folder named `your-site-name` in your current working directory. For example, if the current working directory is `/Users/huigong/projects`, your site will be located in `/Users/huigong/your-site-name`. If you are not sure about your working directory, just type `pwd` in your terminal:
 
 ```Shell
 $ pwd
 /Users/huigong/projects
 ```
 
-and the output shows your working directory.
+And the output shows your working directory.
 
 ### Choose a theme
 
@@ -75,7 +75,7 @@ Creating content in Hugo is simple:
 hugo new posts/hello-world.md
 ```
 
-this will create a new Markdown file named `Hello world` in the content/posts directory. Open the file with your favorite editor (shout out to [VS Code](https://code.visualstudio.com/)) and change the `draft: true` to `draft: false`.
+This will create a new Markdown file named `Hello world` in the content/posts directory. Open the file with your favorite editor (shout out to [VS Code](https://code.visualstudio.com/)) and change the `draft: true` to `draft: false`.
 
 Now, start the Hugo server to preview your site:
 
@@ -93,17 +93,17 @@ baseURL = 'https://huigong-dev.github.io/'
 languageCode = 'en-us'
 ```
 
-Great! You're all set! Finally it's time to build your site:
+Great! You're all set! Finally, it's time to build your site:
 
 ```Shell
 hugo -D
 ```
 
-code of your site will be generated under `./public/`. Change directory to `public/`, do `git init` and set remote to your GitHub pages repository. Push to your GitHub pages repository and your site should be live within seconds.
+Code of your site will be generated under `./public/`. Change directory to `public/`, do `git init` and set remote to your GitHub pages repository. Push to your GitHub pages repository and your site should be live within seconds.
 
 ### Create a blog source repository in GitHub
 
-Okay, now your site is live, what's next? A problem used to bother me a lot was: how can I update my blog on multiple computers? Say, I have written something for my blog on my PC at home and now I'm on the way with a laptop. How can I continue my work? Well the answer is: create a GitHub repository just for your source code. I said "just" because the `public/` directory is within the source code directory and we need to ignore `public/` and push the rest of them to github. Another benefit is that you can use GitHub Actions to glue your source code and blog together, which means you don't need to build and deploy your site every time you change anything in your site, GitHub Actions will do all the boring stuff for you. Sounds nice? Here is how:
+Okay, now your site is live, what's next? A problem used to bother me a lot was: how can I update my blog on multiple computers? Say, I have written something for my blog on my PC at home, and now I'm on the way with a laptop. How can I continue my work? Well the answer is: create a GitHub repository just for your source code. I said "just" because the `public/` directory is within the source code directory, and we need to ignore `public/` and push the rest of them to GitHub. Another benefit is that you can use GitHub Actions to glue your source code and blog together, which means you don't need to build and deploy your site every time you change anything in your site, GitHub Actions will do all the boring stuff for you. Sounds nice? Here is how:
 
 Head over to GitHub and create a new repository with a name like `blog_source` or anything that reminds you it's the source of your blog. Set it as a remote repository for your source code and add `public/` to `.gitignore`.
 
@@ -112,15 +112,15 @@ touch .gitignore
 echo "public/" >> .gitignore
 ```
 
-push it to GitHub and next time you want to edit your blog on another machine you just need to pull it from GitHub and continue the work.
+Push it to GitHub and next time you want to edit your blog on another machine you just need to pull it from GitHub and continue the work.
 
-### Automate the deploy using GitHub Actions
+### Automate the deployment using GitHub Actions
 
 This is one of the exciting parts of building a blog with GitHub Pages. Before building this blog I knew almost nothing about GitHub Actions but after using it, it was amazing! Automating the boring stuff always makes me hyped!
 
 The First step is to create a GitHub personal access token. Follow the official documents [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more information.
 
-Next, Head over to your `blog_source` repository on GitHub and click _Settings -> Secrets -> new repository secret_. Paste the token you just got, set the name to `ACTIONS_DEPLOY_KEY` and hit the _Add secret_ button.
+Next, Head over to your `blog_source` repository on GitHub and click _Settings → Secrets → new repository secret_. Paste the token you just got, set the name to `ACTIONS_DEPLOY_KEY` and hit the _Add secret_ button.
 
 Add the file `.github/workflows/pages.yml` below to your source code repository. The `external_repository` points to your blog repository.
 
@@ -161,6 +161,6 @@ jobs:
        user_email: your-email
 ```
 
-And we are done! GitHub Actions will do all the boring "build and deploy" routine and you can concentrate on content creating and more.
+And we are done! GitHub Actions will do all the boring "build and deploy" routine while you can concentrate on content creating and more.
 
 Happy blogging!
