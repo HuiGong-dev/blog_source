@@ -83,7 +83,7 @@ Now, start the Hugo server to preview your site:
 hugo server -D
 ```
 
-You can then check your new site at http://localhost:1313/.
+You can then check your new site at <http://localhost:1313/>.
 
 Next step is to configure the `config.toml` file. Open it with your favorite editor and set `baseURL` to `https://username.github.io/`. Remember to replace `username` to your own username on GitHub. The code below shows how it looks like by my side.
 
@@ -104,9 +104,9 @@ code of your site will be generated under `./public/`. Change directory to `publ
 ### Create a blog source repository in GitHub
 
 Okay, now your site is live, what's next? A problem used to bother me a lot was: how can I update my blog on multiple computers? Say, I have written something for my blog on my PC at home and now I'm on the way with a laptop. How can I continue my work? Well the answer is: create a GitHub repository just for your source code. I said "just" because the `public/` directory is within the source code directory and we need to ignore `public/` and push the rest of them to github. Another benefit is that you can use GitHub Actions to glue your source code and blog together, which means you don't need to build and deploy your site every time you change anything in your site, GitHub Actions will do all the boring stuff for you. Sounds nice? Here is how:
- 
+
 Head over to GitHub and create a new repository with a name like `blog_source` or anything that reminds you it's the source of your blog. Set it as a remote repository for your source code and add `public/` to `.gitignore`.
- 
+
 ```Shell
 touch .gitignore
 echo "public/" >> .gitignore
