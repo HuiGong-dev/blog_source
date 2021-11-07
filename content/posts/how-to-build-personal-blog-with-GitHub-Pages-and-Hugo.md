@@ -6,7 +6,7 @@ tags: [GitHub Pages, Hugo, GitHub Action]
 categories: [Personal Project]
 ---
 
-You want to build a personal blog but don't want to spend too much time building everything from scratch? Me too! After some research I get to know there're several static site generator out there and the most used generators are: [Jekyll](https://jekyllrb.com/), [Hexo](https://hexo.io/) and [Hugo](https://gohugo.io/). All of them can work perfectly with [GitHub Pages](https://pages.github.com/). I chose Hugo as my site generator and it worked perfectly.
+You want to build a personal blog but don't want to spend too much time building everything from scratch? Me too! After some research I got to know there are several static site generators out there and the most used generators are: [Jekyll](https://jekyllrb.com/), [Hexo](https://hexo.io/) and [Hugo](https://gohugo.io/). All of them can work perfectly with [GitHub Pages](https://pages.github.com/). I chose Hugo as my site generator and it worked perfectly.
 
 ## What is Hugo
 
@@ -22,7 +22,7 @@ Besides, building a blog with Hugo is simple and easy. Here is how:
 
 ### Set up GitHub Pages
 
-Head over to [GitHub](https://github.com/), login and create a new public repository named `username.github.io`. Be sure the `username` is exactly the same as your GitHub username. For example: my username is `HuiGong-dev` so my repository should be named as `HuiGong-dev.github.io`. Check the official guide [here]((https://pages.github.com/)) if you met any problem.
+Head over to [GitHub](https://github.com/), login and create a new public repository named `username.github.io`. Be sure the `username` is exactly the same as your GitHub username. For example: my username is `HuiGong-dev` so my repository should be named as `HuiGong-dev.github.io`. Check the official guide [here]((https://pages.github.com/)) if you meet any problem.
 
 ### Install Hugo
 
@@ -38,7 +38,7 @@ To check your installation:
 hugo version
 ```
 
-the hugo version should show up if the installation is successful.
+The Hugo version should show up if the installation is successful.
 
 ### Create your site
 
@@ -63,7 +63,7 @@ git init
 git submodule add https://github.com/spf13/hyde.git
 ```
 
-There're around 300 themes for Hugo. I chose [hyde](https://github.com/spf13/hyde) for my blog. You can find a theme that fits you best [here](https://themes.gohugo.io/). If none of them is the perfect theme for you, you may consider create your own theme in the future and contribute to the Hugo community :)
+There Are around 300 themes for Hugo. I chose [hyde](https://github.com/spf13/hyde) for my blog. You can find a theme that fits you best [here](https://themes.gohugo.io/). If none of them is the perfect theme for you, you may consider create your own theme in the future and contribute to the Hugo community :)
 
 Don't forget to configure the theme in `config.toml`. Simply add a line `theme = "hyde"` in the file. Replace `hyde` to the name of your own theme if you picked another theme.
 
@@ -103,10 +103,10 @@ code of your site will be generated under `./public/`. Change directory to `publ
 
 ### Create a blog source repository in GitHub
 
-Okay, now your site is live, what's next? A problem used to bother me a lot was: how can I update my blog on multiple computers? Say, I have wrote something for my blog on my PC at home and now I'm on the way with a laptop. How can I continue my work? Well the answer is: create a GitHub repository just for your source code. I said "just" because the `public/` directory is within the source code directory and we need to ignore `public/` and push the rest of them to github. Another benefit is that you can use GitHub Actions to glue your source code and blog together, which means you don't need to build and deploy your site every time you changed anything in your site, GitHub Actions will do all the boring stuff for you. Sounds nice? Here is how:
-
-Head over to GitHub and create a new repository with name like `blog_source` or anything that reminds you it's the source of your blog. Set it as remote repository for your source code and add `public/` to `.gitignore`.
-
+Okay, now your site is live, what's next? A problem used to bother me a lot was: how can I update my blog on multiple computers? Say, I have written something for my blog on my PC at home and now I'm on the way with a laptop. How can I continue my work? Well the answer is: create a GitHub repository just for your source code. I said "just" because the `public/` directory is within the source code directory and we need to ignore `public/` and push the rest of them to github. Another benefit is that you can use GitHub Actions to glue your source code and blog together, which means you don't need to build and deploy your site every time you change anything in your site, GitHub Actions will do all the boring stuff for you. Sounds nice? Here is how:
+ 
+Head over to GitHub and create a new repository with a name like `blog_source` or anything that reminds you it's the source of your blog. Set it as a remote repository for your source code and add `public/` to `.gitignore`.
+ 
 ```Shell
 touch .gitignore
 echo "public/" >> .gitignore
@@ -116,9 +116,9 @@ push it to GitHub and next time you want to edit your blog on another machine yo
 
 ### Automate the deploy using GitHub Actions
 
-This is one of the exciting part building a blog with GitHub Pages. Before building this blog I knew almost nothing about GitHub Actions but after using it, it was amazing! Automating the boring stuff always makes me hyped!
+This is one of the exciting parts of building a blog with GitHub Pages. Before building this blog I knew almost nothing about GitHub Actions but after using it, it was amazing! Automating the boring stuff always makes me hyped!
 
-Fist step is to create a GitHub personal access token. Follow the official documents [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more information.
+The First step is to create a GitHub personal access token. Follow the official documents [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more information.
 
 Next, Head over to your `blog_source` repository on GitHub and click _Settings -> Secrets -> new repository secret_. Paste the token you just got, set the name to `ACTIONS_DEPLOY_KEY` and hit the _Add secret_ button.
 
@@ -126,39 +126,39 @@ Add the file `.github/workflows/pages.yml` below to your source code repository.
 
 ```YAML
 name: hugo publish
-
+ 
 on:
-  push:
-    branches:
-    - main
-
+ push:
+   branches:
+   - main
+ 
 jobs:
-  build-deploy:
-    runs-on: macos-latest
-    steps:
-    - name: Git checkout
-      uses: actions/checkout@v2
-    
-    - name: Update theme
-      run: git submodule update --init --recursive
-
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: '0.88.1'
-
-    - name: Build
-      run: hugo  --minify
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        external_repository: your-github-name/your-github-name.github.io
-        publish_branch: main
-        publish_dir: ./public
-        user_name: your-name
-        user_email: your-email
+ build-deploy:
+   runs-on: macos-latest
+   steps:
+   - name: Git checkout
+     uses: actions/checkout@v2
+  
+   - name: Update theme
+     run: git submodule update --init --recursive
+ 
+   - name: Setup Hugo
+     uses: peaceiris/actions-hugo@v2
+     with:
+       hugo-version: '0.88.1'
+ 
+   - name: Build
+     run: hugo  --minify
+ 
+   - name: Deploy
+     uses: peaceiris/actions-gh-pages@v3
+     with:
+       personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+       external_repository: your-github-name/your-github-name.github.io
+       publish_branch: main
+       publish_dir: ./public
+       user_name: your-name
+       user_email: your-email
 ```
 
 And we are done! GitHub Actions will do all the boring "build and deploy" routine and you can concentrate on content creating and more.
