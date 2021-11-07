@@ -6,7 +6,7 @@ tags: [GitHub Pages, Hugo, GitHub Action]
 categories: [Personal Project]
 ---
 
-You want to build a personal blog but don't want to spend too much time building everything from scratch? Me too! After some research I got to know there are several static site generators out there and the most used generators are: [Jekyll](https://jekyllrb.com/), [Hexo](https://hexo.io/) and [Hugo](https://gohugo.io/). All of them can work perfectly with [GitHub Pages](https://pages.github.com/). I chose Hugo as my site generator and it worked perfectly.
+You want to build a personal blog but don't want to spend too much time building everything from scratch? Me too! After some research I got to know there are several static site generators out there and the most used generators are: [Jekyll](https://jekyllrb.com/), [Hexo](https://hexo.io/) and [Hugo](https://gohugo.io/). All of them work perfectly with [GitHub Pages](https://pages.github.com/). I chose Hugo as my site generator and it worked perfectly.
 
 ## What is Hugo
 
