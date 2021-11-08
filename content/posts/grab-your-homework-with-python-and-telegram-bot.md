@@ -10,7 +10,7 @@ tags: [python, web scrapping, telegram bot, automate the boring stuff]
 - It's fun!
 - It's cool and that's what we CS student do 😉
 - It's a great way for me to apply what I've learned to solve real world problem.
-- It's a typical use case for web scraping and the code can be easily adapted to other scenarios. Have you ever applied for something (for example: a Visa for traveling in another country), and eagerly waited for the result to be published online? Have you ever manually refreshed the webpage again and again just in hope that the result would pop up? Well, let Python do all the work for you so that you can ~~Netflix and Chill~~ spend your time for something more interesting.
+- It's a typical use case for web scraping and the code can be easily adapted to other scenarios. Have you ever applied for something (for example: a Visa for traveling in another country), and eagerly waited for the result to be published online? Have you ever manually refreshed the webpage again and again just in hope that the result would pop up? Well, let Python do all the work for you so that you can ~~Netflix and Chill~~ spend your time on something more interesting.
 
 To be continue...
 
