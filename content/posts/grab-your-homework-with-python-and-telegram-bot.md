@@ -5,7 +5,7 @@ draft: false
 tags: [python, web scrapping, telegram bot, automate the boring stuff]
 ---
 
-So I'm taking a programming paradigms course this semester and the homework will be published every Friday on a webpage. It's kinda boring to check this webpage manually every Friday to grab the homework. Meanwhile, I noticed that the webpage is quite simple and easy to be scraped using python. So...why not? Spend a few hours to write a small piece of code to grab the homework automatically sounds great.
+So I'm taking a programming paradigms course this semester and the homework will be published every Friday on a webpage. It's kinda boring to check this webpage manually every Friday to grab the homework. Meanwhile, I noticed that the webpage is quite simple and easy to be scraped using python. So...why not? Spending a few hours to write a small piece of code to grab the homework automatically sounds great.
 
 ## All these efforts just to grab your homework? Why?
 
