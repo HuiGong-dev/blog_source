@@ -20,7 +20,39 @@ To be continue...
 
 ### Study the webpage
 
+The homework links are located in this [webpage](https://pp.ipd.kit.edu/lehre/WS202122/paradigmen/uebung/). Right click and choose `Inspect` to view the HTML code of this site.
+
+The homework links are located in a `table` element.
+
+![Table](/static/image/table.png)
+
+And then we can see all the links of homework are located in the `<a>` (or [_anchor_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)) element.
+
+ ![Table_details](/static/image/table_details.png)
+
+ All right, time to right some code to get all the homework links.
+
 ### Write the code
+
+Import libraries:
+
+```Python
+import bs4, requests, os
+import urllib.parse as ul
+```
+
+`bs4` for beautiful soup, `os` to read and write files, `requests` to get HTML information and `urllib.parse` to make URL more friendly.
+
+Get the HTML of this page:
+
+```Python
+def get_page(url):
+      page = requests.get(url)
+      page.raise_for_status()
+      return page.text
+```
+
+To be continue...
 
 ## Store result of last scrape as local file
 
