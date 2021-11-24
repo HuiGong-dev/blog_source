@@ -24,11 +24,11 @@ The homework links are located in this [webpage](https://pp.ipd.kit.edu/lehre/WS
 
 The homework links are located in a `table` element.
 
-![Table](/static/image/table.png)
+![Table](/image/table.png)
 
 And then we can see all the links of homework are located in the `<a>` (or [_anchor_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)) element.
 
- ![Table_details](/static/image/table_details.png)
+ ![Table_details](/image/table_details.png)
 
  All right, time to right some code to get all the homework links.
 
