@@ -63,7 +63,7 @@ git init
 git submodule add https://github.com/spf13/hyde.git
 ```
 
-There Are around 300 themes for Hugo. I chose [hyde](https://github.com/spf13/hyde) for my blog. You can find a theme that fits you best [here](https://themes.gohugo.io/). If none of them is the perfect theme for you, you may consider create your own theme in the future and contribute to the Hugo community :)
+There are around 300 themes for Hugo. I chose [hyde](https://github.com/spf13/hyde) for my blog. You can find a theme that fits you best [here](https://themes.gohugo.io/). If none of them is the perfect theme for you, you may consider create your own theme in the future and contribute to the Hugo community :)
 
 Don't forget to configure the theme in `config.toml`. Simply add a line `theme = "hyde"` in the file. Replace `hyde` to the name of your own theme if you picked another theme.
 
