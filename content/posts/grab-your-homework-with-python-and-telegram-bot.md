@@ -30,7 +30,7 @@ And then we can see all the links of homework are located in the `<a>` (or [_anc
 
  ![Table_details](/image/table_details.png)
 
- All right, time to right some code to get all the homework links.
+ All right, time to write some code to get all the links.
 
 ### Write the code
 
