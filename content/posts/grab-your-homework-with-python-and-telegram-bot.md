@@ -201,7 +201,7 @@ $ crontab -e
 15 14-18 * * 5 /path/to/python3 /path/to/updater.py >> /path/to/cron.log 2>&1
 ```
 
-## Future improvement (todo)
+## Future improvement
 
 1. Scrape website with authentication system
 
