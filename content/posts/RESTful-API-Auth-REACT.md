@@ -11,8 +11,8 @@ Here is my plan:
 
 - Learn how to create RESTful API from scratch
 - Learn OAuth 2.0 (perhaps also JWT)
-- Learn REACT basic
-- Dive into React and build (at least one) full-stack React App
+- Learn React basics
+- Dive into React and build (at least one)  MERN Stack App
 
 Other than that I also want to learn more about web3 concepts. I’ll update my progress here. Hopefully I will finish building a few more fun projects at the end of this semester.
 
