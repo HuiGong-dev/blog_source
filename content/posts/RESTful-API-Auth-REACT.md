@@ -18,6 +18,19 @@ Other than that I also want to learn more about web3 concepts. I’ll update my 
 
 - What I’ve learned
 - What was the challenge
-- How I tackled it
+- How I tackled it (if done)
 
 Cheers 🍻
+
+---
+Date: 27 Apr 2022
+
+- What I've learned
+
+Building API using Node.js, express, MongoDB. Finished GET/POST/DELETE methods.
+
+- What was the challenge
+
+Now the API is running on localhost but I need to run it on a server so the next step is to install MongoDB on my server. Other than that everything is fine.
+
+---
