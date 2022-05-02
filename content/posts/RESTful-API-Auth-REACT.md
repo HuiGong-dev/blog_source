@@ -52,9 +52,11 @@ Another problem is I did not see any mention of `index.js` in the `index.html` f
 Date: 2 May 2022
 
 - What I've learned
+
 Add css for components, set inline css.
 
 - Notes
+
 Again, the `index.css` is bundled with `index.html` through webpack just as the case of `index.js`.
 
 Color tokens in JSX will not show color picker in VS Code by default so I looked up some extensions. The first one I tried is `json-color-token`. It actually worked but only supported hex color tokens. Sometimes I also use for example `ragb` so I tried another one called `vscode-color-picker` and now it worked! After installation remember to add this to your `setting.json`:
