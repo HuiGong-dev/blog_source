@@ -47,3 +47,27 @@ JSX feels like a mixture of JavaScript and HTML but some keywords are reserved i
 The tutorial I'm following is aged and it's still using `ReactDOM.render`(react 17) which is no longer supported in React 18. I followed the React document and rewrote it with `root.render`.
 
 Another problem is I did not see any mention of `index.js` in the `index.html` file like it usually does but somehow `index.js` still has access to the `index.html` DOM. I did some googling and found out it's using Webpack with [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin).
+
+---
+Date: 2 May 2022
+
+- What I've learned
+Add css for components, set inline css.
+
+- Notes
+Again, the `index.css` is bundled with `index.html` through webpack just as the case of `index.js`.
+
+Color tokens in JSX will not show color picker in VS Code by default so I looked up some extensions. The first one I tried is `json-color-token`. It actually worked but only supported hex color tokens. Sometimes I also use for example `ragb` so I tried another one called `vscode-color-picker` and now it worked! After installation remember to add this to your `setting.json`:
+
+```json
+"vscode-color-picker.languages": [
+   "python",
+   "typescript",
+   "json",
+   "jsonc",
+   "javascript",
+   "javascriptreact"
+ ]
+```
+
+If the color picker did not show up, try cmd+shift+p and then `reload window`. After that the color picker should be there.
