@@ -126,41 +126,112 @@ Add the file `.github/workflows/pages.yml` below to your source code repository.
 
 ```YAML
 name: hugo publish
- 
+
 on:
- push:
-   branches:
-   - main
- 
+  push:
+    branches:
+    - main
+
 jobs:
- build-deploy:
-   runs-on: macos-latest
-   steps:
-   - name: Git checkout
-     uses: actions/checkout@v2
-  
-   - name: Update theme
-     run: git submodule update --init --recursive
- 
-   - name: Setup Hugo
-     uses: peaceiris/actions-hugo@v2
-     with:
-       hugo-version: '0.88.1'
- 
-   - name: Build
-     run: hugo  --minify
- 
-   - name: Deploy
-     uses: peaceiris/actions-gh-pages@v3
-     with:
-       personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-       external_repository: your-github-name/your-github-name.github.io
-       publish_branch: main
-       publish_dir: ./public
-       user_name: your-name
-       user_email: your-email
+  build-deploy:
+    runs-on: macos-latest
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    
+    - name: Update theme
+      run: git submodule update --init --recursive
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.88.1'
+
+    - name: Build
+      run: hugo  --enableGitInfo --minify
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        external_repository: HuiGong-dev/HuiGong-dev.github.io
+        publish_branch: main
+        publish_dir: ./public
+        user_name: HuiGong-dev
+        user_email: hellohuigong@gmail.com
+
 ```
 
 And we are done! GitHub Actions will do all the boring "build and deploy" routine while you can concentrate on content creating and more.
 
 Happy blogging!
+
+---
+
+### Update for GitHub Action and Lastmod
+
+Recently I tried to show `Last Update` info based on last commit for each post and here is how:
+
+ 1. add `enableGitInfo = true` in your `config.toml` file.
+
+ 2. Ceate new directory `layouts/_default/`(if not exists) directly under hugo directory and create a file called "single.html".
+
+ ```Shell
+ cd your-hugo-directory
+ mkdir -p layouts/_default
+ cd layouts/_default
+ touch single.html
+ ```
+
+ 3. Add content to `single.html`. Here is mine for reference:
+
+```HTML
+{{ define "main" -}}
+<div class="post">
+  <h1>{{ .Title }}</h1>
+  
+  <time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="post-date">Published: {{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+  {{- if .GitInfo }}
+  <time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="post-date">Updated: {{.Page.Lastmod.Format "Mon, Jan 2, 2006" }}</time>
+  {{- end }}
+  {{ .Content }}
+</div>
+
+{{ if .Site.DisqusShortname -}}
+<h2>Comments</h2>
+{{ template "_internal/disqus.html" . }}
+{{- end }}
+{{- end }}
+```
+
+Your `single.html` may look different as mine and it's totally fine. The point is to use `.Page.Lastmod` to get the last update date.
+
+ 4. Add `frontmatter` to `config.toml`
+
+```TOML
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  expiryDate = ['expiryDate']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
+```
+
+So that Hugo will try to get lastmod info from `.GitInfo` first.
+
+5. Add `--enableGitInfo` flag in GitHub Action file and set checkout action fetch-depth to 0. 
+
+The Hugo official document said that you can use `.GitInfo` by either adding `enableGitInfo = true` in your `config.toml` file or add `--enableGitInfo` flag when calling `hugo server` but that's not accurate. You need both to make it work. Otherwise, the `.GitInfo` object would be null.
+
+By default, the [GitHub checkout action](https://github.com/actions/checkout) only fetches the  commit which triggered the workflow. The result is that all the posts will show the same last update date. Specifying `fetch-depth:0` will solve this problem (You can ignore this part if you're not using GitHub action).
+
+The yml file for GitHub Action has been updated above.
+
+What a ride!
+
+### References
+
+<https://discourse.gohugo.io/t/problems-with-gitinfo-in-ci/22480/2>
+
+<https://djangocas.dev/blog/add-git-commit-date-as-last-update-date-in-hugo-page/>
