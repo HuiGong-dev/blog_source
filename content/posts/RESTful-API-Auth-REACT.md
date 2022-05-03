@@ -3,7 +3,7 @@ title: "RESTful API, Authentication & React study log"
 date: 2022-04-26T15:54:54+02:00
 lastmod: 2022-05-02 11:57:36.116
 draft: false
-tags: [study log, api, authentication, React, web3]
+tags: ['study_log', 'api', 'authentication', 'React', 'web3']
 ---
 
 The past two months were the so-called "Klausurphase '' in Germany and I barely updated anything here in those two months. Now it's time to restart in this new semester.

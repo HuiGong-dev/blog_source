@@ -33,3 +33,8 @@ enableGitInfo = true
   expiryDate = ['expiryDate']
   lastmod = [':git', 'lastmod', 'date', 'publishDate']
   publishDate = ['publishDate', 'date']
+
+[taxonomies]
+  category = 'categories'
+  series = 'series'
+  tag = 'tags'  
