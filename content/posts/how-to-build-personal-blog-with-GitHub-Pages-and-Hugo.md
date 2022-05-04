@@ -176,7 +176,7 @@ Recently I tried to show `Last Update` info based on last commit for each post a
 
  1. add `enableGitInfo = true` in your `config.toml` file.
 
- 2. Ceate new directory `layouts/_default/`(if not exists) directly under hugo directory and create a file called "single.html".
+ 2. Ceate a new directory `layouts/_default/`(if not exists) directly under hugo directory and create a file called "single.html".
 
  ```Shell
  cd your-hugo-directory
@@ -206,7 +206,7 @@ Recently I tried to show `Last Update` info based on last commit for each post a
 {{- end }}
 ```
 
-Your `single.html` may look different as mine and it's totally fine. The point is to use `.Page.Lastmod` to get the last update date.
+Your `single.html` may look different to mine and it's totally fine. The point is to use `.Page.Lastmod` to get the last update date.
 
  4. Add `frontmatter` to `config.toml`
 
@@ -220,7 +220,7 @@ Your `single.html` may look different as mine and it's totally fine. The point i
 
 So that Hugo will try to get lastmod info from `.GitInfo` first.
 
-5. Add `--enableGitInfo` flag in GitHub Action file and set checkout action fetch-depth to 0. 
+5. Add `--enableGitInfo` flag in the GitHub Action file and set checkout action fetch-depth to 0.
 
 The Hugo official document said that you can use `.GitInfo` by either adding `enableGitInfo = true` in your `config.toml` file or add `--enableGitInfo` flag when calling `hugo server` but that's not accurate. You need both to make it work. Otherwise, the `.GitInfo` object would be null.
 
