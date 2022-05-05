@@ -94,7 +94,7 @@ State and global state in React and useState hook.
 
 3. Passisng props from one component to another component should be careful. For example passing `element` from `ElementList.jsx` to `Element.jsx`, the element in `ElementList.jsx` looks like this:
 
-```json
+```javascript
 {id: 1, 
 score: 10, 
 comment: 'Lorem ipsum dolor sit amet consectetur adipisicing…ommodi alias voluptatem est voluptatum ipsa quae.'}
@@ -108,7 +108,7 @@ And then pass it to the `Element.jsx`:
 
 The item in `Element.jsx` would be:
 
-```json
+```javascript
 {item: {id: 1, 
 score: 10, 
 comment: 'Lorem ipsum dolor sit amet consectetur adipisicing…ommodi alias voluptatem est voluptatum ipsa quae.'}}
