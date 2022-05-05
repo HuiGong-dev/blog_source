@@ -84,4 +84,4 @@ State in React and useState hook.
 
 - Notes
 
-I kinda like the concept of components. It remind me of EJS template but in a more elegant way. Hooks in React is new to me and the purpose of hooks is to handle events and to make the app interactive. Maybe later I should draw some flow charts to visualize the flow of this concept.
+I kinda like the concept of components. It reminds me of the EJS template but in a more elegant way. Hook in React is new to me and the purpose of hook is to handle events thus to make the app interactive. Maybe later I should draw some flow charts to visualize the flow of this concept.
