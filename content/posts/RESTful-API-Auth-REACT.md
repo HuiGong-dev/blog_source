@@ -74,3 +74,14 @@ Color tokens in JSX will not show color picker in VS Code by default so I looked
 ```
 
 If the color picker did not show up, try cmd+shift+p and then `reload window`. After that the color picker should be there.
+
+---
+Date: 5 May 2022
+
+- What I've learned
+
+State in React and useState hook.
+
+- Notes
+
+I kinda like the concept of components. It remind me of EJS template but in a more elegant way. Hooks in React is new to me and the purpose of hooks is to handle events and to make the app interactive. Maybe later I should draw some flow charts to visualize the flow of this concept.
