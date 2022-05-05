@@ -90,7 +90,7 @@ State and global state in React and useState hook.
 
 1. I kinda like the concept of components. It reminds me of the EJS template but in a more elegant way. Hook in React is new to me and the purpose of hook is to handle events thus to make the app interactive. Maybe later I should draw some flow charts to visualize the flow of this concept.
 
-2. [Keys](https://reactjs.org/docs/lists-and-keys.html#keys) are needed for list component!
+2. [Keys](https://reactjs.org/docs/lists-and-keys.html#keys) are needed for list item! However, there's no need to specify the key in the Item.jsx file. Instead, it should be specified in the ItemList.jsx file. The [React official document](https://reactjs.org/docs/lists-and-keys.html#extracting-components-with-keys) explained it well.
 
 3. Passisng props from one component to another component should be careful. For example passing `element` from `ElementList.jsx` to `Element.jsx`, the element in `ElementList.jsx` looks like this:
 
