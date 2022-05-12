@@ -114,7 +114,7 @@ score: 10,
 comment: 'Lorem ipsum dolor sit amet consectetur adipisicing…ommodi alias voluptatem est voluptatum ipsa quae.'}}
 ```
 
-In order to access `score` information, instead of 
+In order to access `score` information, instead of
 
 ```javascript
 item.score
