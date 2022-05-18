@@ -127,3 +127,13 @@ item.item.score
 ```
 
 I understand why it works this way but still it looks a bit weird. Maybe it's because I'm new to this. I'll update here if I get better explaination/understanding.
+
+---
+
+Okay I know why now. The standard way is to use `props` for the passed item and whatever you call the item in `ElementList.jsx`, it's gonna be an object in `props`.
+
+```javascript
+function Element(props) {
+    const [score, setScore] = useState(props.item.score);
+    const [comment, setComment] = useState(props.item.comment);
+```
