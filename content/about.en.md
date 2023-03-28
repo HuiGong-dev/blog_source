@@ -4,9 +4,10 @@ date: 2021-10-31T21:25:02+01:00
 draft: false
 menu: "main"
 ---
+
 ## Who am I
 
-Hi, my name is Hui. I'm studying computer science in Germany.
+Hi, my name is Hui. I'm studying computer science in Germany and I just finished writing my graduate thesis!
 
 ## Why I build this blog
 
@@ -16,7 +17,7 @@ Hi, my name is Hui. I'm studying computer science in Germany.
 
 ## Blog...about what?
 
- Here are some ideas:
+Here are some ideas:
 
 ### Reflections on my personal projects on GitHub
 
