@@ -19,8 +19,7 @@ googleAnalytics = "UA-212132284-1"
 
 [Menus]
   main = [
-      {Name = "Github", URL = "https://github.com/HuiGong-dev/"},
-      {Name = "LinkedIn", URL = "https://www.linkedin.com/in/helen-gong-874b7a7a/"}
+      {Name = "Github", URL = "https://github.com/HuiGong-dev/"}
   ]
 
   [params]
